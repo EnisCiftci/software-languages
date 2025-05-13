@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Manufacturing" nsURI="https://manufacturing.org/DSL" nsPrefix="manufacturing">
+  <eClassifiers xsi:type="ecore:EClass" name="ManufacturingSystem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" unique="false" lowerBound="1"
+        eType="#//StorageFacility" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" unique="false" lowerBound="1"
+        eType="#//StorageFacility" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
+        eType="#//Step" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkPiece">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//WorkPieceType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Person">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Step" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsible" eType="#//Person"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputWorkpiece" lowerBound="1"
+        upperBound="-1" eType="#//WorkPiece"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputWorkpiece" lowerBound="1"
+        upperBound="-1" eType="#//WorkPiece"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Conditon" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryCondition" eSuperTypes="#//Conditon">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//UnaryOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditon" lowerBound="1"
+        eType="#//Conditon" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkPieceTypeCondition" eSuperTypes="#//Conditon">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//WorkPieceType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryCondition" eSuperTypes="#//Conditon">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//BinaryOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftConditon" lowerBound="1"
+        eType="#//Conditon" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightConditon" lowerBound="1"
+        eType="#//Conditon" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnaryOperator">
+    <eLiterals name="NOT" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BinaryOperator">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessStep" eSuperTypes="#//Step">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subManufacturingsystem"
+        eType="#//ManufacturingSystem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputConditon" eType="#//Conditon"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputConditon" eType="#//Conditon"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransportStep" eSuperTypes="#//Step"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QualityAssuranceStep" eSuperTypes="#//Step"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkPieceType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StorageFacility">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="storage" upperBound="-1"
+        eType="#//WorkPiece" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//WorkPieceType" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

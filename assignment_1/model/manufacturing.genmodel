@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/assignment_1/src" modelPluginID="assignment_1"
+    modelName="Manufacturing" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>manufacturing.ecore</foreignModel>
+  <genPackages prefix="Manufacturing" disposableProviderFactory="true" ecorePackage="manufacturing.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="manufacturing.ecore#//UnaryOperator">
+      <genEnumLiterals ecoreEnumLiteral="manufacturing.ecore#//UnaryOperator/NOT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="manufacturing.ecore#//BinaryOperator">
+      <genEnumLiterals ecoreEnumLiteral="manufacturing.ecore#//BinaryOperator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="manufacturing.ecore#//BinaryOperator/OR"/>
+    </genEnums>
+    <genClasses ecoreClass="manufacturing.ecore#//ManufacturingSystem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute manufacturing.ecore#//ManufacturingSystem/name"/>
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference manufacturing.ecore#//ManufacturingSystem/start"/>
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference manufacturing.ecore#//ManufacturingSystem/end"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//ManufacturingSystem/steps"/>
+    </genClasses>
+    <genClasses ecoreClass="manufacturing.ecore#//WorkPiece">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//WorkPiece/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute manufacturing.ecore#//WorkPiece/id"/>
+    </genClasses>
+    <genClasses ecoreClass="manufacturing.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute manufacturing.ecore#//Person/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="manufacturing.ecore#//Step">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute manufacturing.ecore#//Step/duration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//Step/responsible"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//Step/inputWorkpiece"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//Step/outputWorkpiece"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="manufacturing.ecore#//Conditon"/>
+    <genClasses ecoreClass="manufacturing.ecore#//UnaryCondition">
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute manufacturing.ecore#//UnaryCondition/operator"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//UnaryCondition/conditon"/>
+    </genClasses>
+    <genClasses ecoreClass="manufacturing.ecore#//WorkPieceTypeCondition">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//WorkPieceTypeCondition/type"/>
+    </genClasses>
+    <genClasses ecoreClass="manufacturing.ecore#//BinaryCondition">
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute manufacturing.ecore#//BinaryCondition/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//BinaryCondition/leftConditon"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//BinaryCondition/rightConditon"/>
+    </genClasses>
+    <genClasses ecoreClass="manufacturing.ecore#//ProcessStep">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//ProcessStep/subManufacturingsystem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//ProcessStep/outputConditon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//ProcessStep/inputConditon"/>
+    </genClasses>
+    <genClasses ecoreClass="manufacturing.ecore#//TransportStep"/>
+    <genClasses ecoreClass="manufacturing.ecore#//QualityAssuranceStep"/>
+    <genClasses ecoreClass="manufacturing.ecore#//WorkPieceType">
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute manufacturing.ecore#//WorkPieceType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="manufacturing.ecore#//StorageFacility">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute manufacturing.ecore#//StorageFacility/id"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute manufacturing.ecore#//StorageFacility/name"/>
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference manufacturing.ecore#//StorageFacility/storage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//StorageFacility/types"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
