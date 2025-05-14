@@ -20,6 +20,7 @@
       <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
           ecoreFeature="ecore:EReference manufacturing.ecore#//ManufacturingSystem/end"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//ManufacturingSystem/steps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//ManufacturingSystem/mitarbeiter"/>
     </genClasses>
     <genClasses ecoreClass="manufacturing.ecore#//WorkPiece">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//WorkPiece/type"/>
