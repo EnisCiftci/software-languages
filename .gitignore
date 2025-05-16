@@ -3,3 +3,4 @@
 *.editor
 *.edit
 *.tests
+/.metadata/
