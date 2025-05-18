@@ -2,12 +2,26 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="manufacturingSystem" nsURI="com.chalmers.manufacturingSystem"
     nsPrefix="com.chalmers">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="WorkPiece">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasType" lowerBound="1"
         eType="#//WorkPieceType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ManufacturingStep" eSuperTypes="#//Step"/>
   <eClassifiers xsi:type="ecore:EClass" name="ManufacturingSystem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="dedicatedResponsible"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="dedicatedResponsible" value="self.responsible &lt;> null implies self.consistsOf->select(c | c.oclIsKindOf(Step))->forAll(s | s.responsible &lt;> self.responsible)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="consistsOf" lowerBound="1"
         upperBound="-1" eType="#//ManufacturingSystemElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" upperBound="-1"
@@ -26,7 +40,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="TransportStep" eSuperTypes="#//Step"/>
   <eClassifiers xsi:type="ecore:EClass" name="QualityAssuranceStep" eSuperTypes="#//Step"/>
   <eClassifiers xsi:type="ecore:EClass" name="Step" abstract="true" eSuperTypes="#//ManufacturingSystemElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="oneResponsible"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="oneResponsible" value="self.responsible->size() = 1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" upperBound="-1"
         eType="#//InputCondition" containment="true"/>
@@ -34,6 +54,13 @@
         upperBound="-1" eType="#//OutputDecision" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Responsible">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="atLeastOneStep atMostThreeSteps"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="atLeastOneStep" value="Step.allInstances()->select(s | s.responsible = self)->size() >= 1"/>
+      <details key="atMostThreeSteps" value="Step.allInstances()->select(s | s.responsible = self)->size() &lt;= 3"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BinaryType">
