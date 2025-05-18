@@ -1,0 +1,239 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.7)  18 MAY 2025 20:04
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./doc.tex
+(doc.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
+) (C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen144
+\WF@size=\dimen145
+\c@WF@wrappedlines=\count270
+\WF@box=\box52
+\WF@everypar=\toks20
+Package: wrapfig 2003/01/31  v 3.6
+) (C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen146
+\captionmargin=\dimen147
+\caption@leftmargin=\dimen148
+\caption@rightmargin=\dimen149
+\caption@width=\dimen150
+\caption@indent=\dimen151
+\caption@parindent=\dimen152
+\caption@hangindent=\dimen153
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count271
+\c@continuedfloat=\count272
+Package caption Info: wrapfig package is loaded.
+)
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3k
+eys2e.sty
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2025-01-18 L3 programming layer (loader) 
+
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count273
+\l__pdf_internal_box=\box53
+))
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count274
+\l__lipsum_a_int=\count275
+\l__lipsum_b_int=\count276
+
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
+(doc.aux)
+\openout1 = `doc.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count277
+\scratchdimen=\dimen154
+\scratchbox=\box54
+\nofMPsegments=\count278
+\nofMParguments=\count279
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count280
+\MPscratchDim=\dimen155
+\MPnumerator=\count281
+\makeMPintoPDFobject=\count282
+\everyMPtoPDFconversion=\toks22
+)
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\soner\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 15.
+<images/Pasted image 20250518183913.png, id=1, 250.43562pt x 161.60374pt>
+File: images/Pasted image 20250518183913.png Graphic file (type png)
+<use images/Pasted image 20250518183913.png>
+Package pdftex.def Info: images/Pasted image 20250518183913.png  used on input 
+line 19.
+(pdftex.def)             Requested size: 131.10168pt x 84.60158pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
+[]\OT1/cmr/m/n/10 1.
+ []
+
+
+Underfull \hbox (badness 2012) in paragraph at lines 24--25
+\OT1/cmr/m/n/10 Ad-di-tion-ally, Man-u-fac-tur-ingSys-temEle-ment
+ []
+
+<images/Screenshot 2025-05-18 191855.png, id=3, 576.65437pt x 103.13531pt>
+File: images/Screenshot 2025-05-18 191855.png Graphic file (type png)
+<use images/Screenshot 2025-05-18 191855.png>
+Package pdftex.def Info: images/Screenshot 2025-05-18 191855.png  used on input
+ line 30.
+(pdftex.def)             Requested size: 131.10168pt x 23.44678pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--33
+[]\OT1/cmr/m/n/10 2.
+ []
+
+
+Underfull \hbox (badness 3068) in paragraph at lines 36--37
+[]\OT1/cmr/m/n/10 The sec-ond ex-pres-sion is an ex-pres-
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 36--37
+\OT1/cmr/m/n/10 sion used to check that all Man-u-fac-tur-
+ []
+
+
+
+[1
+
+{C:/Users/soner/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/Pas
+ted image 20250518183913.png> <./images/Screenshot 2025-05-18 191855.png>]
+<images/ex3.png, id=12, 458.46281pt x 127.22531pt>
+File: images/ex3.png Graphic file (type png)
+<use images/ex3.png>
+Package pdftex.def Info: images/ex3.png  used on input line 42.
+(pdftex.def)             Requested size: 131.10168pt x 36.38188pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--45
+[]\OT1/cmr/m/n/10 3.
+ []
+
+<images/ex4.png, id=13, 453.94594pt x 115.18031pt>
+File: images/ex4.png Graphic file (type png)
+<use images/ex4.png>
+Package pdftex.def Info: images/ex4.png  used on input line 51.
+(pdftex.def)             Requested size: 131.10168pt x 33.26434pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--54
+[]\OT1/cmr/m/n/10 4.
+ []
+
+
+
+[2 <./images/ex3.png> <./images/ex4.png>] (doc.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 3210 strings out of 473530
+ 60988 string characters out of 5714795
+ 535817 words of memory out of 5000000
+ 26448 multiletter control sequences out of 15000+600000
+ 561872 words of font info for 46 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 79i,6n,93p,1294b,249s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/soner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr10.pfb><C:/Users/soner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr17.pfb>
+Output written on doc.pdf (2 pages, 168156 bytes).
+PDF statistics:
+ 28 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+
