@@ -17,9 +17,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ManufacturingStep" eSuperTypes="#//Step"/>
   <eClassifiers xsi:type="ecore:EClass" name="ManufacturingSystem">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="dedicatedResponsible"/>
+      <details key="constraints" value="noExternalTransition dedicatedResponsible"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="noExternalTransition" value="self.consistsOf->forAll(e1 | e1.transition->forAll(e2 | self.consistsOf->includes(e2)))"/>
       <details key="dedicatedResponsible" value="self.responsible &lt;> null implies self.consistsOf->select(c | c.oclIsKindOf(Step))->forAll(s | s.responsible &lt;> self.responsible)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="consistsOf" lowerBound="1"
@@ -71,10 +72,22 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StoragePoint" eSuperTypes="#//ManufacturingSystemElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="noTransition"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="noTransition" value="self.transition->size() = 0"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stores" upperBound="-1"
         eType="#//WorkPieceType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ManufacturingSystemElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="noStorageTransition"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="noStorageTransition" value="self.transition->select(s | s.oclIsKindOf(StoragePoint))->size() = 0"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transition" upperBound="-1"
         eType="#//ManufacturingSystemElement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
