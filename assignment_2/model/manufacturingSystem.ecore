@@ -42,10 +42,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="QualityAssuranceStep" eSuperTypes="#//Step"/>
   <eClassifiers xsi:type="ecore:EClass" name="Step" abstract="true" eSuperTypes="#//ManufacturingSystemElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="oneResponsible"/>
+      <details key="constraints" value="oneResponsible inputOutputCompatible"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="oneResponsible" value="self.responsible->size() = 1"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="inputOutputCompatible" value="self.transition->forAll(t | t.oclIsKindOf(Step) implies t.oclAsType(Step).input->exists(i | i.oclIsKindOf(WorkPieceCondition) and self.output->exists(o | o.outputTypes = i.oclAsType(WorkPieceCondition).requiresType)))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0"/>
