@@ -20,8 +20,8 @@
       <details key="constraints" value="noExternalTransition dedicatedResponsible"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="noExternalTransition" value="self.consistsOf->forAll(e1 | e1.transition->forAll(e2 | self.consistsOf->includes(e2)))"/>
-      <details key="dedicatedResponsible" value="self.responsible &lt;> null implies self.consistsOf->select(c | c.oclIsKindOf(Step))->forAll(s | s.responsible &lt;> self.responsible)"/>
+      <details key="noExternalTransition" value="self.consistsOf->forAll(e1 | &#xA;&#x9;&#x9;&#x9;e1.transition->forAll(e2 | self.consistsOf->includes(e2))&#xA;&#x9;&#x9;)"/>
+      <details key="dedicatedResponsible" value="self.responsible &lt;> null implies self.consistsOf->select(c |&#xA;&#x9;&#x9;&#x9;c.oclIsKindOf(Step)&#xA;&#x9;&#x9;)->forAll(s | s.responsible &lt;> self.responsible)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="consistsOf" lowerBound="1"
         upperBound="-1" eType="#//ManufacturingSystemElement" containment="true"/>
@@ -42,10 +42,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="QualityAssuranceStep" eSuperTypes="#//Step"/>
   <eClassifiers xsi:type="ecore:EClass" name="Step" abstract="true" eSuperTypes="#//ManufacturingSystemElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="oneResponsible"/>
+      <details key="constraints" value="oneResponsible compatibleSteps"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="oneResponsible" value="self.responsible->size() = 1"/>
+      <details key="compatibleSteps" value="Step.allInstances()->select(s | s.transition = self)-> forAll(s |&#xA;&#x9;&#x9;&#x9;s.output->select(o | o.oclIsKindOf(WorkPieceType))->exists(w1 |&#xA;&#x9;&#x9;&#x9;&#x9;self.input->select(i | i.oclIsKindOf(WorkPieceCondition))->exists(w2 |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;w2.oclAsType(WorkPieceCondition).requiresType = w1.oclAsType(WorkPieceType).name&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0"/>
@@ -83,10 +84,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ManufacturingSystemElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="noStorageTransition"/>
+      <details key="constraints" value="noStorageTransition keepUpTheSpeed"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="noStorageTransition" value="self.transition->select(s | s.oclIsKindOf(StoragePoint))->size() = 0"/>
+      <details key="keepUpTheSpeed" value="transition->forAll(t |&#xA;&#x9;&#x9;&#x9;t.oclIsKindOf(Step) implies (&#xA;&#x9;&#x9;&#x9;&#x9;self.oclIsKindOf(StoragePoint) or&#xA;&#x9;&#x9;&#x9;&#x9;(self.oclIsKindOf(Step) implies self.oclAsType(Step).speed &lt;= t.oclAsType(Step).speed)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transition" upperBound="-1"
         eType="#//ManufacturingSystemElement"/>
@@ -94,6 +96,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="responsible" eType="#//Responsible"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeManufacturingStep" eSuperTypes="#//Step">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="startCompatibility endCompatibility"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="startCompatibility" value="self.input->exists(i | &#xA;&#x9;&#x9;&#x9;i.oclIsKindOf(WorkPieceCondition) and &#xA;&#x9;&#x9;&#x9;self.contains.start->exists(s |&#xA;&#x9;&#x9;&#x9;&#x9;s.stores->includes(i.oclAsType(WorkPieceCondition).requiresType)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)"/>
+      <details key="endCompatibility" value="self.output->exists(o | &#xA;&#x9;&#x9;&#x9;o.outputTypes->exists(ot |&#xA;&#x9;&#x9;&#x9;&#x9;self.contains.end->exists(s | s.stores->includes(ot))&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contains" lowerBound="1"
         eType="#//ManufacturingSystem" containment="true"/>
   </eClassifiers>
