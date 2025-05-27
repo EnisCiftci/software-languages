@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.manufacturing
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.manufacturing
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.manufacturing; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: assignment_1,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.19.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
