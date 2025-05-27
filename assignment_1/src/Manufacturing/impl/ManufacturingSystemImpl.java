@@ -4,6 +4,7 @@ package Manufacturing.impl;
 
 import Manufacturing.ManufacturingPackage;
 import Manufacturing.ManufacturingSystem;
+import Manufacturing.Person;
 import Manufacturing.Step;
 import Manufacturing.StorageFacility;
 
@@ -35,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link Manufacturing.impl.ManufacturingSystemImpl#getStart <em>Start</em>}</li>
  *   <li>{@link Manufacturing.impl.ManufacturingSystemImpl#getEnd <em>End</em>}</li>
  *   <li>{@link Manufacturing.impl.ManufacturingSystemImpl#getSteps <em>Steps</em>}</li>
+ *   <li>{@link Manufacturing.impl.ManufacturingSystemImpl#getMitarbeiter <em>Mitarbeiter</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +91,16 @@ public class ManufacturingSystemImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected EList<Step> steps;
+
+	/**
+	 * The cached value of the '{@link #getMitarbeiter() <em>Mitarbeiter</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMitarbeiter()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Person> mitarbeiter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,6 +253,19 @@ public class ManufacturingSystemImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
+	public EList<Person> getMitarbeiter() {
+		if (mitarbeiter == null) {
+			mitarbeiter = new EObjectContainmentEList<Person>(Person.class, this, ManufacturingPackage.MANUFACTURING_SYSTEM__MITARBEITER);
+		}
+		return mitarbeiter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ManufacturingPackage.MANUFACTURING_SYSTEM__START:
@@ -249,6 +274,8 @@ public class ManufacturingSystemImpl extends MinimalEObjectImpl.Container implem
 				return basicSetEnd(null, msgs);
 			case ManufacturingPackage.MANUFACTURING_SYSTEM__STEPS:
 				return ((InternalEList<?>)getSteps()).basicRemove(otherEnd, msgs);
+			case ManufacturingPackage.MANUFACTURING_SYSTEM__MITARBEITER:
+				return ((InternalEList<?>)getMitarbeiter()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -269,6 +296,8 @@ public class ManufacturingSystemImpl extends MinimalEObjectImpl.Container implem
 				return getEnd();
 			case ManufacturingPackage.MANUFACTURING_SYSTEM__STEPS:
 				return getSteps();
+			case ManufacturingPackage.MANUFACTURING_SYSTEM__MITARBEITER:
+				return getMitarbeiter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -295,6 +324,10 @@ public class ManufacturingSystemImpl extends MinimalEObjectImpl.Container implem
 				getSteps().clear();
 				getSteps().addAll((Collection<? extends Step>)newValue);
 				return;
+			case ManufacturingPackage.MANUFACTURING_SYSTEM__MITARBEITER:
+				getMitarbeiter().clear();
+				getMitarbeiter().addAll((Collection<? extends Person>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -319,6 +352,9 @@ public class ManufacturingSystemImpl extends MinimalEObjectImpl.Container implem
 			case ManufacturingPackage.MANUFACTURING_SYSTEM__STEPS:
 				getSteps().clear();
 				return;
+			case ManufacturingPackage.MANUFACTURING_SYSTEM__MITARBEITER:
+				getMitarbeiter().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -339,6 +375,8 @@ public class ManufacturingSystemImpl extends MinimalEObjectImpl.Container implem
 				return end != null;
 			case ManufacturingPackage.MANUFACTURING_SYSTEM__STEPS:
 				return steps != null && !steps.isEmpty();
+			case ManufacturingPackage.MANUFACTURING_SYSTEM__MITARBEITER:
+				return mitarbeiter != null && !mitarbeiter.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

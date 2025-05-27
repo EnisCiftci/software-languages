@@ -14,7 +14,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WorkPiece">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//WorkPieceType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Person">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -23,8 +23,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="responsible" eType="#//Person"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputWorkpiece" lowerBound="1"
-        upperBound="-1" eType="#//WorkPiece"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outputWorkpiece" lowerBound="1"
         upperBound="-1" eType="#//WorkPiece"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Conditon" abstract="true"/>
@@ -55,6 +53,8 @@
         eType="#//ManufacturingSystem" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputConditon" eType="#//Conditon"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputWorkpiece" lowerBound="1"
+        upperBound="-1" eType="#//WorkPiece" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TransportStep" eSuperTypes="#//Step"/>
   <eClassifiers xsi:type="ecore:EClass" name="QualityAssuranceStep" eSuperTypes="#//Step"/>

@@ -104,13 +104,22 @@ public interface ManufacturingPackage extends EPackage {
 	int MANUFACTURING_SYSTEM__STEPS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Mitarbeiter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANUFACTURING_SYSTEM__MITARBEITER = 4;
+
+	/**
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURING_SYSTEM_FEATURE_COUNT = 4;
+	int MANUFACTURING_SYSTEM_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -141,13 +150,13 @@ public interface ManufacturingPackage extends EPackage {
 	int WORK_PIECE__TYPE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PIECE__ID = 1;
+	int WORK_PIECE__NAME = 1;
 
 	/**
 	 * The number of structural features of the '<em>Work Piece</em>' class.
@@ -242,22 +251,13 @@ public interface ManufacturingPackage extends EPackage {
 	int STEP__INPUT_WORKPIECE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Output Workpiece</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__OUTPUT_WORKPIECE = 3;
-
-	/**
 	 * The number of structural features of the '<em>Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP_FEATURE_COUNT = 4;
+	int STEP_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Step</em>' class.
@@ -472,15 +472,6 @@ public interface ManufacturingPackage extends EPackage {
 	int PROCESS_STEP__INPUT_WORKPIECE = STEP__INPUT_WORKPIECE;
 
 	/**
-	 * The feature id for the '<em><b>Output Workpiece</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_STEP__OUTPUT_WORKPIECE = STEP__OUTPUT_WORKPIECE;
-
-	/**
 	 * The feature id for the '<em><b>Sub Manufacturingsystem</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -490,22 +481,22 @@ public interface ManufacturingPackage extends EPackage {
 	int PROCESS_STEP__SUB_MANUFACTURINGSYSTEM = STEP_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Output Conditon</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_STEP__OUTPUT_CONDITON = STEP_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Input Conditon</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_STEP__INPUT_CONDITON = STEP_FEATURE_COUNT + 2;
+	int PROCESS_STEP__INPUT_CONDITON = STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Output Workpiece</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_STEP__OUTPUT_WORKPIECE = STEP_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Process Step</em>' class.
@@ -563,15 +554,6 @@ public interface ManufacturingPackage extends EPackage {
 	int TRANSPORT_STEP__INPUT_WORKPIECE = STEP__INPUT_WORKPIECE;
 
 	/**
-	 * The feature id for the '<em><b>Output Workpiece</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSPORT_STEP__OUTPUT_WORKPIECE = STEP__OUTPUT_WORKPIECE;
-
-	/**
 	 * The number of structural features of the '<em>Transport Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -625,15 +607,6 @@ public interface ManufacturingPackage extends EPackage {
 	 * @ordered
 	 */
 	int QUALITY_ASSURANCE_STEP__INPUT_WORKPIECE = STEP__INPUT_WORKPIECE;
-
-	/**
-	 * The feature id for the '<em><b>Output Workpiece</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUALITY_ASSURANCE_STEP__OUTPUT_WORKPIECE = STEP__OUTPUT_WORKPIECE;
 
 	/**
 	 * The number of structural features of the '<em>Quality Assurance Step</em>' class.
@@ -830,6 +803,17 @@ public interface ManufacturingPackage extends EPackage {
 	EReference getManufacturingSystem_Steps();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link Manufacturing.ManufacturingSystem#getMitarbeiter <em>Mitarbeiter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Mitarbeiter</em>'.
+	 * @see Manufacturing.ManufacturingSystem#getMitarbeiter()
+	 * @see #getManufacturingSystem()
+	 * @generated
+	 */
+	EReference getManufacturingSystem_Mitarbeiter();
+
+	/**
 	 * Returns the meta object for class '{@link Manufacturing.WorkPiece <em>Work Piece</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -851,15 +835,15 @@ public interface ManufacturingPackage extends EPackage {
 	EReference getWorkPiece_Type();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Manufacturing.WorkPiece#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link Manufacturing.WorkPiece#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see Manufacturing.WorkPiece#getId()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see Manufacturing.WorkPiece#getName()
 	 * @see #getWorkPiece()
 	 * @generated
 	 */
-	EAttribute getWorkPiece_Id();
+	EAttribute getWorkPiece_Name();
 
 	/**
 	 * Returns the meta object for class '{@link Manufacturing.Person <em>Person</em>}'.
@@ -924,17 +908,6 @@ public interface ManufacturingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStep_InputWorkpiece();
-
-	/**
-	 * Returns the meta object for the reference list '{@link Manufacturing.Step#getOutputWorkpiece <em>Output Workpiece</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Output Workpiece</em>'.
-	 * @see Manufacturing.Step#getOutputWorkpiece()
-	 * @see #getStep()
-	 * @generated
-	 */
-	EReference getStep_OutputWorkpiece();
 
 	/**
 	 * Returns the meta object for class '{@link Manufacturing.Conditon <em>Conditon</em>}'.
@@ -1064,17 +1037,6 @@ public interface ManufacturingPackage extends EPackage {
 	EReference getProcessStep_SubManufacturingsystem();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link Manufacturing.ProcessStep#getOutputConditon <em>Output Conditon</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Output Conditon</em>'.
-	 * @see Manufacturing.ProcessStep#getOutputConditon()
-	 * @see #getProcessStep()
-	 * @generated
-	 */
-	EReference getProcessStep_OutputConditon();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link Manufacturing.ProcessStep#getInputConditon <em>Input Conditon</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1084,6 +1046,17 @@ public interface ManufacturingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProcessStep_InputConditon();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Manufacturing.ProcessStep#getOutputWorkpiece <em>Output Workpiece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Output Workpiece</em>'.
+	 * @see Manufacturing.ProcessStep#getOutputWorkpiece()
+	 * @see #getProcessStep()
+	 * @generated
+	 */
+	EReference getProcessStep_OutputWorkpiece();
 
 	/**
 	 * Returns the meta object for class '{@link Manufacturing.TransportStep <em>Transport Step</em>}'.
@@ -1266,6 +1239,14 @@ public interface ManufacturingPackage extends EPackage {
 		EReference MANUFACTURING_SYSTEM__STEPS = eINSTANCE.getManufacturingSystem_Steps();
 
 		/**
+		 * The meta object literal for the '<em><b>Mitarbeiter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANUFACTURING_SYSTEM__MITARBEITER = eINSTANCE.getManufacturingSystem_Mitarbeiter();
+
+		/**
 		 * The meta object literal for the '{@link Manufacturing.impl.WorkPieceImpl <em>Work Piece</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1284,12 +1265,12 @@ public interface ManufacturingPackage extends EPackage {
 		EReference WORK_PIECE__TYPE = eINSTANCE.getWorkPiece_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_PIECE__ID = eINSTANCE.getWorkPiece_Id();
+		EAttribute WORK_PIECE__NAME = eINSTANCE.getWorkPiece_Name();
 
 		/**
 		 * The meta object literal for the '{@link Manufacturing.impl.PersonImpl <em>Person</em>}' class.
@@ -1342,14 +1323,6 @@ public interface ManufacturingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STEP__INPUT_WORKPIECE = eINSTANCE.getStep_InputWorkpiece();
-
-		/**
-		 * The meta object literal for the '<em><b>Output Workpiece</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STEP__OUTPUT_WORKPIECE = eINSTANCE.getStep_OutputWorkpiece();
 
 		/**
 		 * The meta object literal for the '{@link Manufacturing.impl.ConditonImpl <em>Conditon</em>}' class.
@@ -1458,20 +1431,20 @@ public interface ManufacturingPackage extends EPackage {
 		EReference PROCESS_STEP__SUB_MANUFACTURINGSYSTEM = eINSTANCE.getProcessStep_SubManufacturingsystem();
 
 		/**
-		 * The meta object literal for the '<em><b>Output Conditon</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROCESS_STEP__OUTPUT_CONDITON = eINSTANCE.getProcessStep_OutputConditon();
-
-		/**
 		 * The meta object literal for the '<em><b>Input Conditon</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PROCESS_STEP__INPUT_CONDITON = eINSTANCE.getProcessStep_InputConditon();
+
+		/**
+		 * The meta object literal for the '<em><b>Output Workpiece</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCESS_STEP__OUTPUT_WORKPIECE = eINSTANCE.getProcessStep_OutputWorkpiece();
 
 		/**
 		 * The meta object literal for the '{@link Manufacturing.impl.TransportStepImpl <em>Transport Step</em>}' class.

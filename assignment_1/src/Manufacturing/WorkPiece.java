@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link Manufacturing.WorkPiece#getType <em>Type</em>}</li>
- *   <li>{@link Manufacturing.WorkPiece#getId <em>Id</em>}</li>
+ *   <li>{@link Manufacturing.WorkPiece#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see Manufacturing.ManufacturingPackage#getWorkPiece()
@@ -45,25 +45,25 @@ public interface WorkPiece extends EObject {
 	void setType(WorkPieceType value);
 
 	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(int)
-	 * @see Manufacturing.ManufacturingPackage#getWorkPiece_Id()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see Manufacturing.ManufacturingPackage#getWorkPiece_Name()
 	 * @model
 	 * @generated
 	 */
-	int getId();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link Manufacturing.WorkPiece#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link Manufacturing.WorkPiece#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setId(int value);
+	void setName(String value);
 
 } // WorkPiece

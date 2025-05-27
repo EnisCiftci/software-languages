@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Manufacturing.ManufacturingSystem#getStart <em>Start</em>}</li>
  *   <li>{@link Manufacturing.ManufacturingSystem#getEnd <em>End</em>}</li>
  *   <li>{@link Manufacturing.ManufacturingSystem#getSteps <em>Steps</em>}</li>
+ *   <li>{@link Manufacturing.ManufacturingSystem#getMitarbeiter <em>Mitarbeiter</em>}</li>
  * </ul>
  *
  * @see Manufacturing.ManufacturingPackage#getManufacturingSystem()
@@ -103,5 +104,17 @@ public interface ManufacturingSystem extends EObject {
 	 * @generated
 	 */
 	EList<Step> getSteps();
+
+	/**
+	 * Returns the value of the '<em><b>Mitarbeiter</b></em>' containment reference list.
+	 * The list contents are of type {@link Manufacturing.Person}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mitarbeiter</em>' containment reference list.
+	 * @see Manufacturing.ManufacturingPackage#getManufacturingSystem_Mitarbeiter()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Person> getMitarbeiter();
 
 } // ManufacturingSystem

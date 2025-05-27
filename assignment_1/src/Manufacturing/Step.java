@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Manufacturing.Step#getDuration <em>Duration</em>}</li>
  *   <li>{@link Manufacturing.Step#getResponsible <em>Responsible</em>}</li>
  *   <li>{@link Manufacturing.Step#getInputWorkpiece <em>Input Workpiece</em>}</li>
- *   <li>{@link Manufacturing.Step#getOutputWorkpiece <em>Output Workpiece</em>}</li>
  * </ul>
  *
  * @see Manufacturing.ManufacturingPackage#getStep()
@@ -81,17 +80,5 @@ public interface Step extends EObject {
 	 * @generated
 	 */
 	EList<WorkPiece> getInputWorkpiece();
-
-	/**
-	 * Returns the value of the '<em><b>Output Workpiece</b></em>' reference list.
-	 * The list contents are of type {@link Manufacturing.WorkPiece}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Output Workpiece</em>' reference list.
-	 * @see Manufacturing.ManufacturingPackage#getStep_OutputWorkpiece()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<WorkPiece> getOutputWorkpiece();
 
 } // Step

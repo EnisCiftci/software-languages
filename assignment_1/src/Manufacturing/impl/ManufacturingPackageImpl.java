@@ -256,6 +256,16 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 	 * @generated
 	 */
 	@Override
+	public EReference getManufacturingSystem_Mitarbeiter() {
+		return (EReference)manufacturingSystemEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWorkPiece() {
 		return workPieceEClass;
 	}
@@ -276,7 +286,7 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWorkPiece_Id() {
+	public EAttribute getWorkPiece_Name() {
 		return (EAttribute)workPieceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -338,16 +348,6 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 	@Override
 	public EReference getStep_InputWorkpiece() {
 		return (EReference)stepEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getStep_OutputWorkpiece() {
-		return (EReference)stepEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -476,7 +476,7 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 	 * @generated
 	 */
 	@Override
-	public EReference getProcessStep_OutputConditon() {
+	public EReference getProcessStep_InputConditon() {
 		return (EReference)processStepEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -486,7 +486,7 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 	 * @generated
 	 */
 	@Override
-	public EReference getProcessStep_InputConditon() {
+	public EReference getProcessStep_OutputWorkpiece() {
 		return (EReference)processStepEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -634,10 +634,11 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 		createEReference(manufacturingSystemEClass, MANUFACTURING_SYSTEM__START);
 		createEReference(manufacturingSystemEClass, MANUFACTURING_SYSTEM__END);
 		createEReference(manufacturingSystemEClass, MANUFACTURING_SYSTEM__STEPS);
+		createEReference(manufacturingSystemEClass, MANUFACTURING_SYSTEM__MITARBEITER);
 
 		workPieceEClass = createEClass(WORK_PIECE);
 		createEReference(workPieceEClass, WORK_PIECE__TYPE);
-		createEAttribute(workPieceEClass, WORK_PIECE__ID);
+		createEAttribute(workPieceEClass, WORK_PIECE__NAME);
 
 		personEClass = createEClass(PERSON);
 		createEAttribute(personEClass, PERSON__NAME);
@@ -646,7 +647,6 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 		createEAttribute(stepEClass, STEP__DURATION);
 		createEReference(stepEClass, STEP__RESPONSIBLE);
 		createEReference(stepEClass, STEP__INPUT_WORKPIECE);
-		createEReference(stepEClass, STEP__OUTPUT_WORKPIECE);
 
 		conditonEClass = createEClass(CONDITON);
 
@@ -664,8 +664,8 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 
 		processStepEClass = createEClass(PROCESS_STEP);
 		createEReference(processStepEClass, PROCESS_STEP__SUB_MANUFACTURINGSYSTEM);
-		createEReference(processStepEClass, PROCESS_STEP__OUTPUT_CONDITON);
 		createEReference(processStepEClass, PROCESS_STEP__INPUT_CONDITON);
+		createEReference(processStepEClass, PROCESS_STEP__OUTPUT_WORKPIECE);
 
 		transportStepEClass = createEClass(TRANSPORT_STEP);
 
@@ -726,10 +726,11 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 		initEReference(getManufacturingSystem_Start(), this.getStorageFacility(), null, "start", null, 1, 1, ManufacturingSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getManufacturingSystem_End(), this.getStorageFacility(), null, "end", null, 1, 1, ManufacturingSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getManufacturingSystem_Steps(), this.getStep(), null, "steps", null, 0, -1, ManufacturingSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getManufacturingSystem_Mitarbeiter(), this.getPerson(), null, "mitarbeiter", null, 0, -1, ManufacturingSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workPieceEClass, WorkPiece.class, "WorkPiece", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkPiece_Type(), this.getWorkPieceType(), null, "type", null, 1, 1, WorkPiece.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWorkPiece_Id(), ecorePackage.getEInt(), "id", null, 0, 1, WorkPiece.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWorkPiece_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkPiece.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(personEClass, Person.class, "Person", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPerson_Name(), ecorePackage.getEString(), "name", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -738,7 +739,6 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 		initEAttribute(getStep_Duration(), ecorePackage.getEString(), "duration", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStep_Responsible(), this.getPerson(), null, "responsible", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStep_InputWorkpiece(), this.getWorkPiece(), null, "inputWorkpiece", null, 1, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_OutputWorkpiece(), this.getWorkPiece(), null, "outputWorkpiece", null, 1, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditonEClass, Conditon.class, "Conditon", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -756,8 +756,8 @@ public class ManufacturingPackageImpl extends EPackageImpl implements Manufactur
 
 		initEClass(processStepEClass, ProcessStep.class, "ProcessStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProcessStep_SubManufacturingsystem(), this.getManufacturingSystem(), null, "subManufacturingsystem", null, 0, 1, ProcessStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProcessStep_OutputConditon(), this.getConditon(), null, "outputConditon", null, 0, 1, ProcessStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProcessStep_InputConditon(), this.getConditon(), null, "inputConditon", null, 0, 1, ProcessStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcessStep_OutputWorkpiece(), this.getWorkPiece(), null, "outputWorkpiece", null, 1, -1, ProcessStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transportStepEClass, TransportStep.class, "TransportStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

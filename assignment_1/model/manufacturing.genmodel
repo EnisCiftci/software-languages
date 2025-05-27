@@ -24,7 +24,7 @@
     </genClasses>
     <genClasses ecoreClass="manufacturing.ecore#//WorkPiece">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//WorkPiece/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute manufacturing.ecore#//WorkPiece/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute manufacturing.ecore#//WorkPiece/name"/>
     </genClasses>
     <genClasses ecoreClass="manufacturing.ecore#//Person">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute manufacturing.ecore#//Person/name"/>
@@ -33,7 +33,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute manufacturing.ecore#//Step/duration"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//Step/responsible"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//Step/inputWorkpiece"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference manufacturing.ecore#//Step/outputWorkpiece"/>
     </genClasses>
     <genClasses image="false" ecoreClass="manufacturing.ecore#//Conditon"/>
     <genClasses ecoreClass="manufacturing.ecore#//UnaryCondition">
@@ -50,8 +49,8 @@
     </genClasses>
     <genClasses ecoreClass="manufacturing.ecore#//ProcessStep">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//ProcessStep/subManufacturingsystem"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//ProcessStep/outputConditon"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//ProcessStep/inputConditon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference manufacturing.ecore#//ProcessStep/outputWorkpiece"/>
     </genClasses>
     <genClasses ecoreClass="manufacturing.ecore#//TransportStep"/>
     <genClasses ecoreClass="manufacturing.ecore#//QualityAssuranceStep"/>

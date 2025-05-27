@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link Manufacturing.impl.WorkPieceImpl#getType <em>Type</em>}</li>
- *   <li>{@link Manufacturing.impl.WorkPieceImpl#getId <em>Id</em>}</li>
+ *   <li>{@link Manufacturing.impl.WorkPieceImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,24 +40,24 @@ public class WorkPieceImpl extends MinimalEObjectImpl.Container implements WorkP
 	protected WorkPieceType type;
 
 	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ID_EDEFAULT = 0;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected int id = ID_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,8 +124,8 @@ public class WorkPieceImpl extends MinimalEObjectImpl.Container implements WorkP
 	 * @generated
 	 */
 	@Override
-	public int getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -134,11 +134,11 @@ public class WorkPieceImpl extends MinimalEObjectImpl.Container implements WorkP
 	 * @generated
 	 */
 	@Override
-	public void setId(int newId) {
-		int oldId = id;
-		id = newId;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ManufacturingPackage.WORK_PIECE__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, ManufacturingPackage.WORK_PIECE__NAME, oldName, name));
 	}
 
 	/**
@@ -152,8 +152,8 @@ public class WorkPieceImpl extends MinimalEObjectImpl.Container implements WorkP
 			case ManufacturingPackage.WORK_PIECE__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case ManufacturingPackage.WORK_PIECE__ID:
-				return getId();
+			case ManufacturingPackage.WORK_PIECE__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,8 +169,8 @@ public class WorkPieceImpl extends MinimalEObjectImpl.Container implements WorkP
 			case ManufacturingPackage.WORK_PIECE__TYPE:
 				setType((WorkPieceType)newValue);
 				return;
-			case ManufacturingPackage.WORK_PIECE__ID:
-				setId((Integer)newValue);
+			case ManufacturingPackage.WORK_PIECE__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,8 +187,8 @@ public class WorkPieceImpl extends MinimalEObjectImpl.Container implements WorkP
 			case ManufacturingPackage.WORK_PIECE__TYPE:
 				setType((WorkPieceType)null);
 				return;
-			case ManufacturingPackage.WORK_PIECE__ID:
-				setId(ID_EDEFAULT);
+			case ManufacturingPackage.WORK_PIECE__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,8 +204,8 @@ public class WorkPieceImpl extends MinimalEObjectImpl.Container implements WorkP
 		switch (featureID) {
 			case ManufacturingPackage.WORK_PIECE__TYPE:
 				return type != null;
-			case ManufacturingPackage.WORK_PIECE__ID:
-				return id != ID_EDEFAULT;
+			case ManufacturingPackage.WORK_PIECE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,8 +220,8 @@ public class WorkPieceImpl extends MinimalEObjectImpl.Container implements WorkP
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (id: ");
-		result.append(id);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

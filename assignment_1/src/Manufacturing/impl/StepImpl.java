@@ -10,7 +10,6 @@ import Manufacturing.WorkPiece;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -18,7 +17,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -32,7 +30,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link Manufacturing.impl.StepImpl#getDuration <em>Duration</em>}</li>
  *   <li>{@link Manufacturing.impl.StepImpl#getResponsible <em>Responsible</em>}</li>
  *   <li>{@link Manufacturing.impl.StepImpl#getInputWorkpiece <em>Input Workpiece</em>}</li>
- *   <li>{@link Manufacturing.impl.StepImpl#getOutputWorkpiece <em>Output Workpiece</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,16 +74,6 @@ public abstract class StepImpl extends MinimalEObjectImpl.Container implements S
 	 * @ordered
 	 */
 	protected EList<WorkPiece> inputWorkpiece;
-
-	/**
-	 * The cached value of the '{@link #getOutputWorkpiece() <em>Output Workpiece</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutputWorkpiece()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<WorkPiece> outputWorkpiece;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,19 +176,6 @@ public abstract class StepImpl extends MinimalEObjectImpl.Container implements S
 	 * @generated
 	 */
 	@Override
-	public EList<WorkPiece> getOutputWorkpiece() {
-		if (outputWorkpiece == null) {
-			outputWorkpiece = new EObjectResolvingEList<WorkPiece>(WorkPiece.class, this, ManufacturingPackage.STEP__OUTPUT_WORKPIECE);
-		}
-		return outputWorkpiece;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ManufacturingPackage.STEP__DURATION:
@@ -211,8 +185,6 @@ public abstract class StepImpl extends MinimalEObjectImpl.Container implements S
 				return basicGetResponsible();
 			case ManufacturingPackage.STEP__INPUT_WORKPIECE:
 				return getInputWorkpiece();
-			case ManufacturingPackage.STEP__OUTPUT_WORKPIECE:
-				return getOutputWorkpiece();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -236,10 +208,6 @@ public abstract class StepImpl extends MinimalEObjectImpl.Container implements S
 				getInputWorkpiece().clear();
 				getInputWorkpiece().addAll((Collection<? extends WorkPiece>)newValue);
 				return;
-			case ManufacturingPackage.STEP__OUTPUT_WORKPIECE:
-				getOutputWorkpiece().clear();
-				getOutputWorkpiece().addAll((Collection<? extends WorkPiece>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -261,9 +229,6 @@ public abstract class StepImpl extends MinimalEObjectImpl.Container implements S
 			case ManufacturingPackage.STEP__INPUT_WORKPIECE:
 				getInputWorkpiece().clear();
 				return;
-			case ManufacturingPackage.STEP__OUTPUT_WORKPIECE:
-				getOutputWorkpiece().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -282,8 +247,6 @@ public abstract class StepImpl extends MinimalEObjectImpl.Container implements S
 				return responsible != null;
 			case ManufacturingPackage.STEP__INPUT_WORKPIECE:
 				return inputWorkpiece != null && !inputWorkpiece.isEmpty();
-			case ManufacturingPackage.STEP__OUTPUT_WORKPIECE:
-				return outputWorkpiece != null && !outputWorkpiece.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
