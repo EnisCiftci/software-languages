@@ -1,0 +1,48 @@
+ManufacturingSystem BIGTABLE 
+	start StorageFacility RUB
+		id 1
+		storage[
+			WorkPiece IronWorkPiece1 type Iron,
+			WorkPiece WoodWorkPiece1 type Wood,
+			WorkPiece WoodWorkPiece2 type Wood
+		]
+			
+		types [
+			WorkPieceType Wood,
+			WorkPieceType Iron 
+		]
+	
+	end StorageFacility OWERK 
+		id 2
+		types [
+			WorkPieceType Table
+		]
+		
+	steps [
+		ProcessStep
+			duration "10 Hours"
+			responsible Julia
+			inputWorkpiece ["RUB.WoodWorkPiece1" , "RUB.WoodWorkPiece2"]
+			inputConditon ("RUB.Wood" && !"RUB.Iron")
+			outputWorkpiece [
+				WorkPiece TableWorkpiece1 type "OWERK.Table"
+			],
+			
+		TransportStep
+			duration "15 Minutes"
+			responsible Julia
+			inputWorkpiece [TableWorkpiece1], 
+			
+		QualityAssuranceStep
+			duration "1 Hour"
+			responsible Max
+			inputWorkpiece [TableWorkpiece1]
+	]
+		
+	mitarbeiter [
+		Person Julia,
+		Person Max
+	]
+
+	
+		
